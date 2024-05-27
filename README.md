@@ -1,6 +1,6 @@
-# Svelte and TailwindCSS Template
+# Svelte 5 & TailwindCSS Template
 
-This is a template for a Svelte project with TailwindCSS and Typescript. It is based on the official Svelte template.
+This is a template for a Svelte 5 project with TailwindCSS and Typescript. It is based on the official Svelte template.
 
 ## Installed packages
 
