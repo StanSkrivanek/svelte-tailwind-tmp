@@ -2,52 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
-/* fonts */
-
-@font-face {
-	font-family: 'Thin';
-	src: url('/fonts/inter/Inter-Thin.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'ExtraLight';
-	src: url('/fonts/inter/Inter-ExtraLight.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'light';
-	src: url('/fonts/inter/Inter-Light.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Regular';
-	src: url('/fonts/inter/Inter-Regular.ttf') format('truetype');
-}
-@font-face {
-	font-family: 'Medium';
-	src: url('/fonts/inter/Inter-Medium.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'SemiBold';
-	src: url('/fonts/inter/Inter-SemiBold.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Bold';
-	src: url('/fonts/inter/Inter-Bold.ttf') format('truetype');
-}
-@font-face {
-	font-family: 'ExtraBold';
-	src: url('/fonts/inter/Inter-ExtraBold.ttf') format('truetype');
-}
-
-@font-face {
-	font-family: 'Black';
-	src: url('/fonts/inter/Inter-Black.ttf') format('truetype');
-}
-
 @layer base {
+	/* fonts */
+
+	@font-face {
+		font-family: 'Thin';
+		src: url('/fonts/inter/Inter-Thin.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'ExtraLight';
+		src: url('/fonts/inter/Inter-ExtraLight.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'light';
+		src: url('/fonts/inter/Inter-Light.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'Regular';
+		src: url('/fonts/inter/Inter-Regular.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'Medium';
+		src: url('/fonts/inter/Inter-Medium.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'SemiBold';
+		src: url('/fonts/inter/Inter-SemiBold.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'Bold';
+		src: url('/fonts/inter/Inter-Bold.ttf') format('truetype');
+	}
+	@font-face {
+		font-family: 'ExtraBold';
+		src: url('/fonts/inter/Inter-ExtraBold.ttf') format('truetype');
+	}
+
+	@font-face {
+		font-family: 'Black';
+		src: url('/fonts/inter/Inter-Black.ttf') format('truetype');
+	}
 	:root {
 		/* base sizes */
 		--base-size: 1.2rem;
@@ -58,7 +57,7 @@
 		--fw-bold: 'Bold', sans-serif;
 		--fw-extra-bold: 'ExtraBold', sans-serif;
 		--fw-extra-light: 'ExtraLight', sans-serif;
-		--fw-light: 'light', sans-serif;
+		--fw-light: 'Light', sans-serif;
 		--fw-medium: 'Medium', sans-serif;
 		--fw-regular: 'Regular', sans-serif;
 		--fw-semi-bold: 'SemiBold', sans-serif;
@@ -66,11 +65,11 @@
 
 		/* colors */
 
-		--test: hsl(196, 100%, 50%);
+		--showColor: hsl(196, 100%, 50%);
 		--transparent: transparent;
 
-		--hsl-main: 10, 89%, 55%;
-		--hsl-secondary: 196, 100%, 50%;
+		--hsl-main: 10 89% 55%;
+		--hsl-secondary: 196 100% 50%;
 
 		--hsl-white: 0 0% 98%;
 		/* blacks */
@@ -82,8 +81,7 @@
 		--hsl-offwhite: 33 77% 96%;
 		--hsl-bonewhite: 44 5% 95%;
 		--hsl-alabaster: 48 29% 90%;
-		/* --hsl-white: 45 29% 97%; */
-		/* --hsl-lightwhite: 45 60% 96%; */
+
 		/* grays */
 		--hsl-gray: 213 36% 27%;
 		--hsl-platinum: 40 5% 89%;
@@ -106,6 +104,9 @@
 		/* mixed OKLAB colors */
 		--clr-brand: color-mix(in oklab, hsl(var(--hsl-main)) 65%, white);
 		--clr-bg-main: color-mix(in oklab, hsl(var(--hsl-offwhite)) 20%, white 1%);
+		--clr-font-main: color-mix(in oklab, hsl(var(--hsl-black-matte)) 90%, white 16%);
+		--clr-font-light: color-mix(in oklab, hsl(var(--hsl-black-matte)) 90%, white 60%);
+		--clr-link: color-mix(in oklab, hsl(var(--hsl-main)), black 16%);
 	}
 
 	/* CSS reset */
@@ -142,8 +143,9 @@
 	h5,
 	h6 {
 		overflow-wrap: break-word;
-		color: var(--clr-brand);
+		color: var(--clr-font-main);
 	}
+
 	#root,
 	#__next {
 		isolation: isolate;
@@ -172,7 +174,7 @@
 	h1,
 	.h1 {
 		font-size: clamp(1.953rem, calc(1.4rem + 1vw), 3.052rem);
-		margin-bottom: 1.6rem;
+		margin-bottom: 1rem;
 	}
 
 	h2,
@@ -203,6 +205,45 @@
 		margin-bottom: var(--base-size);
 	}
 
+	/* max width of plain text */
+	p,
+	ul,
+	ol {
+		max-width: 72ch;
+	}
+
+	p {
+		line-height: 1.4;
+		margin-bottom: 1rem;
+	}
+
+	p:last-child {
+		margin-bottom: 0;
+	}
+
+	ul,
+	ol {
+		list-style-type: square;
+		margin-bottom: 1.6rem;
+	}
+
+	/* Links */
+	a {
+		color: var(--clr-link);
+	}
+
+	a:hover {
+		text-decoration: underline;
+		color: var(--clr-link);
+	}
+
+	strong {
+		letter-spacing: 0.05rem;
+	}
+
+	svg {
+		display: block;
+	}
 	/* helpers */
 
 	/* utility classes */
