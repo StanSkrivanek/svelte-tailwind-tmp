@@ -54,27 +54,58 @@
 		--lineHeight: 1.5;
 
 		/* fonts */
-		--ff-black: 'Black', sans-serif;
-		--ff-bold: 'Bold', sans-serif;
-		--ff-extra-bold: 'ExtraBold', sans-serif;
-		--ff-extra-light: 'ExtraLight', sans-serif;
-		--ff-light: 'light', sans-serif;
-		--ff-medium: 'Medium', sans-serif;
-		--ff-regular: 'Regular', sans-serif;
-		--ff-semi-bold: 'SemiBold', sans-serif;
-		--ff-thin: 'Thin', sans-serif;
+		--fw-black: 'Black', sans-serif;
+		--fw-bold: 'Bold', sans-serif;
+		--fw-extra-bold: 'ExtraBold', sans-serif;
+		--fw-extra-light: 'ExtraLight', sans-serif;
+		--fw-light: 'light', sans-serif;
+		--fw-medium: 'Medium', sans-serif;
+		--fw-regular: 'Regular', sans-serif;
+		--fw-semi-bold: 'SemiBold', sans-serif;
+		--fw-thin: 'Thin', sans-serif;
 
 		/* colors */
 
-      --test: hsl(10, 89%, 55%);
-      
-		--hsl-brand: 10, 89%, 55%;
+		--test: hsl(196, 100%, 50%);
+		--transparent: transparent;
 
+		--hsl-main: 10, 89%, 55%;
+		--hsl-secondary: 196, 100%, 50%;
 
-		--clr-transparent: transparent;
-		--clr-main-bg: hsl(45, 60%, 96%);
+		--hsl-white: 0 0% 98%;
+		/* blacks */
+		--hsl-black-matte: 204 22% 13%;
+		--hsl-black-charcoal: 204 19% 26%;
+		--hsl-black-licorice: 0 20% 9%;
 
-		--clr-brand: color-mix(in oklab, hsl(var(--hsl-brand)) 65%, white);
+		/* whites */
+		--hsl-offwhite: 33 77% 96%;
+		--hsl-bonewhite: 44 5% 95%;
+		--hsl-alabaster: 48 29% 90%;
+		/* --hsl-white: 45 29% 97%; */
+		/* --hsl-lightwhite: 45 60% 96%; */
+		/* grays */
+		--hsl-gray: 213 36% 27%;
+		--hsl-platinum: 40 5% 89%;
+		--hsl-steel: 203 5% 47%;
+		--hsl-charcoal: 204 19% 26%;
+
+		/* base HSL colors */
+		--hsl-orange: 11 80% 60%;
+		--hsl-orangered: 16 100% 50%;
+		--hsl-levander: 260 82% 71%;
+		--hsl-purple: 260 60% 65%;
+		--hsl-blue: 218 87% 69%;
+		--hsl-green: 162 80% 59%;
+		--hsl-pink: 301 55% 69%;
+		--hsl-yellow: 46 100% 50%;
+		--hsl-gold: 51 100% 50%;
+		--hsl-cyan: 180 50% 50%;
+		--hsl-red: 350 100% 65%;
+
+		/* mixed OKLAB colors */
+		--clr-brand: color-mix(in oklab, hsl(var(--hsl-main)) 65%, white);
+		--clr-bg-main: color-mix(in oklab, hsl(var(--hsl-offwhite)) 20%, white 1%);
 	}
 
 	/* CSS reset */
@@ -118,18 +149,15 @@
 		isolation: isolate;
 	}
 
-	/* colors */
-
 	/* base styles */
 	body {
-		font-family: var(--ff-regular);
+		background: var(--clr-bg-main);
+		font-family: var(--fw-regular);
 		/* optimizeSpeed */
 		text-size-adjust: 100%;
 		-webkit-text-size-adjust: 100%;
 		-moz-text-size-adjust: 100%;
 		-ms-text-size-adjust: 100%;
-
-		/* optimizeLegibility */
 
 		/* antialiasing */
 		-webkit-font-smoothing: antialiased;
@@ -139,4 +167,61 @@
 		font-variant-ligatures: no-common-ligatures;
 		text-rendering: optimizeLegibility;
 	}
+
+	/* typography */
+	h1,
+	.h1 {
+		font-size: clamp(1.953rem, calc(1.4rem + 1vw), 3.052rem);
+		margin-bottom: 1.6rem;
+	}
+
+	h2,
+	.h2 {
+		font-size: clamp(1.536rem, calc(1.2rem + 1vw), 2.441rem);
+		margin-bottom: var(--h3);
+	}
+
+	h3,
+	.h3 {
+		font-size: clamp(1.536rem, calc(1rem + 1vw), 1.993rem);
+		margin-bottom: var(--h4);
+	}
+
+	h4,
+	.h4 {
+		font-size: clamp(1.25rem, calc(0.9rem + 1vw), 1.563rem);
+		margin-bottom: var(--h5);
+	}
+	h5,
+	.h5 {
+		font-size: clamp(1rem, calc(0.8rem + 1vw), 1.25rem);
+		margin-bottom: var(--h6);
+	}
+	h6,
+	.h6 {
+		font-size: clamp(1rem, calc(0.8rem + 0.5vw), 1rem);
+		margin-bottom: var(--base-size);
+	}
+
+	/* helpers */
+
+	/* utility classes */
+
+	/* components */
+
+	/* animations */
+
+	/* pages */
+
+	/* themes */
+
+	/* variants */
+
+	/* utilities */
+
+	/* accessibility */
+
+	/* print */
+
+	/* debug */
 }
