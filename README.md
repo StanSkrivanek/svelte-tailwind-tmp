@@ -17,7 +17,7 @@ fonts are in the `static/fonts/inter` folder. The fonts are:
 ## CSS
 
 Template have :
-- **CSS Reset** applied based on the [Josh Comeau Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
+- applied **CSS Reset** based on the [Josh Comeau Modern CSS Reset](https://www.joshwcomeau.com/css/custom-css-reset/)
 - basic custom color set
 
 ---
